@@ -7,7 +7,7 @@ from tqdm import tqdm
 from collections import Counter
 
 # Path to the country musician text file
-path = r"C:\Users\jbhan\Desktop\socialgraphs2024\data\week4_country_music.txt"
+path = r"C:\Users\jbhan\Desktop\SocialGraphsAssignment2\Exercises_Johan\data\week4_country_music.txt"
 
 # Regular expression pattern to match all Wikipedia page names in double brackets that are not files or categories
 pattern = re.compile(r'\[\[(?!File:|Category:)([^|\]]+)')
@@ -140,5 +140,7 @@ async def main(page_names):
 if __name__ == "__main__":
     asyncio.run(main(set(country_musicians)))
 
+    print(f"Number of nodes: {G.number_of_nodes()}")
+    print(f"Number of edges: {G.number_of_edges()}")
     # Save the graph to a GraphML file
-    nx.write_graphml(G, "data/country_musician_graph.graphml")
+    nx.write_graphml(G, r"C:\Users\jbhan\Desktop\SocialGraphsAssignment2\Exercises_Johan\data\new_country_musician_graph.graphml")
